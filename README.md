@@ -1,117 +1,98 @@
 # Integrated QGP Evaluation Data
 
-This repository contains the de-identified experimental records supporting the
-figures and tables in the manuscript *Integrated QGP Protection for
-Heterogeneous Traffic over Quantum-Keyed Software Encryptor*.
+This repository provides the public data companion for the manuscript
+*Integrated QGP Protection for Heterogeneous Traffic over Quantum-Keyed
+Software Encryptor*. It contains the experimental records used to evaluate
+heterogeneous protected traffic, fail-closed verification, performance and
+concurrency, key rotation, and KeyId traceability.
 
-The release is intentionally data-focused. It provides event-level and
-trial-level experimental records, field definitions, paper-to-file mapping, and
-provenance needed to inspect the reported evidence with standard CSV/JSON
-tools. Two structure-preserving primary-evidence datasets release deterministic
-50% samples of the formal Sidecar run and attack-panel campaign without
-distributing complete operational logs. A sanitized carrier packet-header PCAP
-provides packet-level timing, direction, segmentation, and size evidence from
-an accepted run. The repository does not include project source code, analysis
-or plotting scripts, generated figures, or precomputed result summaries.
+## Paper
 
-## Paper-to-file map
+**Integrated QGP Protection for Heterogeneous Traffic over Quantum-Keyed
+Software Encryptor**
 
-The object numbers below follow the current submission manuscript. The stable
-descriptions keep the mapping understandable if final typesetting changes a
-number.
+The release is organized around the five evaluation questions in the paper.
+Citation metadata for the repository are provided in [CITATION.cff](CITATION.cff);
+the article DOI can be added there after publication.
 
-| Manuscript evidence | Released records |
+## Release contents
+
+- 25 structured CSV, JSON, and JSONL files containing 2,305 experimental,
+  event, and evidence-linkage records;
+- two primary-evidence datasets containing 425 records sampled from the formal
+  Sidecar and attack-panel campaigns;
+- one sanitized PCAP containing 78 packet-header records derived from an
+  accepted carrier run;
+- a data dictionary, provenance notes, a machine-readable manifest, and
+  SHA-256 checksums.
+
+No installation is required to inspect the release. The repository is a data
+companion rather than a source-code or end-to-end reproduction package.
+
+## Data-to-paper map
+
+| Evaluation question | Released evidence |
 |---|---|
-| Q1: three shared traffic profiles and placement timing | `data/functional/core_functional_metrics.csv`, `data/functional/sidecar_functional_metrics.csv` |
-| Q1: message/file/web protected-envelope medians | `data/functional/functional_perf_alice.jsonl`, `functional_perf_bob.jsonl`, `functional_qkd_audit.json` |
-| Q1: 1 KB--1 MB file-size trials | `data/functional/payload_size_metrics.csv` |
-| Q1: 30 TCP-stream and 30 UDP-datagram trials | `data/functional/tcp_stream_trials.csv`, `udp_profile_trials.csv` |
-| Q1: UDP complete/incomplete receiver boundary | `data/functional/udp_boundary_trials.csv` |
-| Q1: Sidecar coverage across five KeyIds | `data/functional/sidecar_key_coverage.csv` |
-| Q2: 30 honest and 370 malformed/replayed/forged trials | `data/security/fail_closed_trials.csv` |
-| Q2: post-signing identity tampering | `data/security/post_signing_key_tamper_trials.csv` |
-| Q2: valid-signature KeyId consistency gate | `data/security/valid_signature_binding_trials.csv` |
-| Q1/Q5: 45/90 accepted operations across five cross-process stages | `data/primary_evidence/sidecar_accepted_trace.jsonl` |
-| Q2: 200/400 receiver events, sampled at 50% within every attack-panel case | `data/primary_evidence/attack_panel_receiver_events.jsonl` |
-| Q1: selected TCP carrier packet-header trace | `data/packet_capture/carrier_packet_headers.pcap` |
-| Q3: nine component checkpoints | the de-identified Alice/Bob functional JSONL files and QKD audit above |
-| Q3: concurrency operating range | `data/performance/concurrency_trials.csv`, `concurrency_summary.csv` |
-| Q4: six clean/injection pairs | `data/performance/attack_mix_pairs.csv`, `attack_mix_phase_rows.csv` |
-| Q5: one-hour stability | `data/rotation/one_hour_timeline.csv`, `rotation_actions.csv` |
-| Q5: matched 30 s and 10 s rotation comparison | `data/rotation/rotation_actions.csv`, `rotation_summary.csv` |
-| Q5: single-key, multi-key, and Sidecar traceability | `data/traceability/core_single_key_linkage.csv`, `core_multi_key_linkage.csv`, and `data/functional/sidecar_key_coverage.csv` |
-| Q5: retained-event consistency check | `data/traceability/audit_chain_tamper_results.csv` |
+| Q1: heterogeneous traffic and placement | `data/functional/`, `data/primary_evidence/sidecar_accepted_trace.jsonl`, `data/packet_capture/` |
+| Q2: fail-closed rejection and KeyId consistency | `data/security/`, `data/primary_evidence/attack_panel_receiver_events.jsonl` |
+| Q3: processing checkpoints and concurrent load | `data/functional/functional_perf_*.jsonl`, `data/performance/concurrency_*.csv` |
+| Q4: normal traffic under injected invalid frames | `data/performance/attack_mix_pairs.csv`, `data/performance/attack_mix_phase_rows.csv` |
+| Q5: rotation and post-run traceability | `data/rotation/`, `data/traceability/`, `data/functional/sidecar_key_coverage.csv` |
 
-The manuscript's traceability-chain figure is a structural explanation rather
-than a statistical plot. Its quantitative evidence is represented by the
-traceability records listed above.
+Exact field definitions and per-file descriptions are available in
+[DATA_DICTIONARY.md](DATA_DICTIONARY.md).
 
-## Repository layout
+## Repository structure
 
 ```text
 data/
-  functional/      heterogeneous traffic, placement, size, and UDP records
-  security/        fail-closed, post-signing tamper, and binding-gate records
-  performance/     concurrency and paired attack-mix records
-  rotation/        one-hour and matched-rotation records
-  traceability/    cross-source linkage and retained-event records
-  primary_evidence/ 50% samples of accepted source-event records
-  packet_capture/  sanitized carrier packet-header trace
+  functional/       heterogeneous traffic, placement, size, and UDP records
+  security/         fail-closed, tamper, and KeyId-binding records
+  performance/      concurrency and paired attack-mix records
+  rotation/         one-hour and matched-rotation records
+  traceability/     cross-source linkage and retained-event checks
+  primary_evidence/ sampled source-event records
+  packet_capture/   sanitized carrier packet-header trace
 provenance/
-  data_manifest.json   row counts, fields, sizes, and hashes for every data file
+  data_manifest.json
+DATA_DICTIONARY.md
+PROVENANCE.md
+CHECKSUMS.sha256
+CITATION.cff
 ```
 
-See [DATA_DICTIONARY.md](DATA_DICTIONARY.md) for field definitions and
-[PROVENANCE.md](PROVENANCE.md) for source selection, de-identification, and
-exclusion rules.
+## Using the release
 
-## De-identification and exclusions
+CSV files contain one header row. JSONL files contain one JSON object per line.
+The PCAP can be opened with Wireshark or another packet-analysis tool. The
+manifest records the row count, fields, size, and SHA-256 digest of every data
+file.
 
-- In the structured CSV, JSON, and JSONL records, operational QKD identifiers
-  are replaced consistently by `KID-###` labels.
-- Structured-record action and run identifiers are replaced by `ACT-######` and
-  `RUN-####`.
-- Absolute timestamps, network addresses and ports, host/user names, private
-  paths, nonces, key epochs, and raw key-management text are removed from the
-  structured records.
-- The reverse pseudonym mappings are not retained in this repository.
-- The selected PCAP preserves packet direction, TCP flags, original on-wire
-  length, segmentation, and relative timing. Addresses and ports are mapped to
-  documentation-only values, timestamps are shifted, link-layer addresses and
-  TCP timestamp values are cleared, and application payload bytes are omitted.
-- Complete packet-capture collections, plaintext-interface captures, KME/SSH
-  captures, and full operational logs remain excluded.
-- No symmetric key, signing private key, credential, access token, or raw key
-  material is included.
-
-The de-identified records preserve equality relationships needed to interpret
-the released cross-file joins.
-
-## Data availability statement
-
-Suggested manuscript wording:
-
-> The de-identified event-level and trial-level records supporting the figures
-> and tables, together with de-identified primary-evidence samples, a selected
-> sanitized carrier packet-header capture, a data dictionary, and provenance
-> documentation, are available in the GitHub repository *Integrated QGP
-> Evaluation Data* at
-> https://github.com/MaoooMao/integrated-qgp-evaluation-artifact. Full
-> packet-capture collections, plaintext-interface captures, KME/SSH captures,
-> and unredacted operational logs are not publicly released.
-
-No archival DOI is assigned to this submission snapshot. If an archival DOI is
-created later, it should identify an immutable release corresponding to the
-accepted manuscript.
-
-## Integrity, citation, and license
-
-`CHECKSUMS.sha256` covers every versioned file except the checksum file itself.
-It can be checked with a standard SHA-256 utility, for example:
+To verify the release:
 
 ```bash
 shasum -a 256 -c CHECKSUMS.sha256
 ```
 
-Citation metadata are provided in [CITATION.cff](CITATION.cff). The data and
+## Release boundary
+
+Operational KeyIds, action identifiers, and run identifiers in the structured
+records are replaced by stable public pseudonyms so that cross-file equality
+relationships remain inspectable. Network addresses, absolute timestamps,
+nonces, private paths, and key-management metadata are removed from those
+records.
+
+The packet trace preserves packet order, direction, TCP flags, original wire
+length, segmentation, and relative timing. Addresses and ports are mapped to
+documentation-only values, timestamps are shifted, and application payload
+bytes are omitted.
+
+Complete packet-capture collections, plaintext-interface captures, KME/SSH
+captures, full operational logs, credentials, and key material are not part of
+the release. See [PROVENANCE.md](PROVENANCE.md) for the complete selection and
+transformation policy.
+
+## Citation and license
+
+Please use [CITATION.cff](CITATION.cff) when citing this dataset. The data and
 documentation are released under CC BY 4.0; see [LICENSE](LICENSE).
