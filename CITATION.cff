@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this artifact, please cite the repository and the associated manuscript."
-title: "Integrated QGP Evaluation Artifact"
+message: "If you use these data, please cite the repository and the associated manuscript."
+title: "Integrated QGP Evaluation Data"
 type: dataset
-version: "submission-v1"
+version: "submission-data-v1"
 date-released: 2026-07-15
 repository-code: "https://github.com/MaoooMao/integrated-qgp-evaluation-artifact"
 authors:

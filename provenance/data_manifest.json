@@ -472,5 +472,5 @@
     "key_ids": 145,
     "run_ids": 508
   },
-  "schema": "quantum-keyed-encryptor-public-artifact-v1"
+  "schema": "integrated-qgp-public-data-v1"
 }

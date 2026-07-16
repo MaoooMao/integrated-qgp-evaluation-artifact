@@ -15,7 +15,7 @@ measurements and are never silently imputed.
 | `*_s`, `*_seconds` | Duration or relative offset in seconds. |
 | `*_bytes` | Byte count. `MB` fields use the units retained by the accepted analysis. |
 | `PASS` / `FAIL` | Outcome under the campaign's declared acceptance rule. |
-| Boolean fields | Serialized as `True`/`False`, `YES`/`NO`, or `1`/`0` according to the accepted source; the scripts normalize these encodings. |
+| Boolean fields | Serialized as `True`/`False`, `YES`/`NO`, or `1`/`0` according to the accepted source. |
 | `openweb` | The manuscript's web-fetch workload. |
 
 ## Functional data
