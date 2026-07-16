@@ -21,7 +21,9 @@ The released experiment families are:
 6. one-hour and matched-interval key-rotation accounting;
 7. single-key, multi-key, Sidecar, and retained-event traceability checks;
 8. accepted cross-process and receiver-verification record paths, sampled at
-   50% within their formal campaigns.
+   50% within their formal campaigns;
+9. one selected sanitized TCP carrier packet-header capture from an accepted
+   run.
 
 `provenance/data_manifest.json` records the row count, field list, byte count,
 and SHA-256 digest of every released data file. `CHECKSUMS.sha256` covers the
@@ -44,7 +46,7 @@ attack-panel sample selects odd trial indices within every case, yielding 200
 of 400 receiver events while preserving every tested condition. They use the
 same public action and KeyId pseudonyms as the complete released trial files.
 
-The transformation removes:
+From the structured CSV, JSON, and JSONL records, the transformation removes:
 
 - internal network addresses and ports;
 - host and user names;
@@ -54,16 +56,30 @@ The transformation removes:
 - raw packet and payload hashes where they are not needed to interpret a record;
 - raw key-delivery log text, credentials, access tokens, and key material.
 
-Before publication, the released files were scanned for UUIDs, private-range IP
-addresses, private path patterns, known internal account markers, raw campaign
-identifiers, private-key markers, and common credential assignments.
+Before publication, the structured files were scanned for UUIDs, private-range
+IP addresses, private path patterns, known internal account markers, raw
+campaign identifiers, private-key markers, and common credential assignments.
+The selected PCAP was audited separately across its complete packet set and
+printable strings.
+
+## Selected packet-capture boundary
+
+`data/packet_capture/carrier_packet_headers.pcap` contains 78 Linux
+cooked-capture packet records derived from four outbound TCP carrier
+connections in an accepted run. It preserves record order, packet direction,
+TCP flags, original on-wire length, segmentation, and inter-packet timing.
+Private addresses and operational ports are mapped to documentation-only
+values, absolute timestamps are shifted to a synthetic epoch, link-layer
+addresses and TCP timestamp values are cleared, and application payload bytes
+are omitted. Consequently, no operational KeyId or encrypted application bytes
+are present in the public PCAP.
 
 ## Deliberately excluded evidence
 
-Complete raw packet captures, console transcripts, service stdout/stderr,
-unredacted key-management records, full packet/payload contents, private
-topology, and the private evidence tree are not released. These materials
-contain operational identifiers. Instead, the repository includes substantial
+Complete packet-capture collections, plaintext-interface captures, console
+transcripts, service stdout/stderr, unredacted key-management records, private
+topology, and the private evidence tree are not released. Instead, the
+repository includes one sanitized packet-header PCAP and substantial
 de-identified samples from accepted QGP, carrier, workload, and receiver
 verification records.
 

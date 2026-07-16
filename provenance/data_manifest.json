@@ -2,6 +2,7 @@
   "deidentification": {
     "action_identifiers": "stable ACT-###### pseudonyms",
     "key_identifiers": "stable KID-### pseudonyms; reverse map not retained",
+    "packet_capture_exception": "the selected packet-header PCAP preserves direction, flags, original wire length, segmentation, and relative timing; addresses and ports are mapped to documentation values, timestamps are shifted, and all application payload bytes are omitted",
     "removed": [
       "absolute timestamps",
       "network addresses and ports",
@@ -10,10 +11,10 @@
       "nonces and raw message identifiers",
       "key epochs",
       "raw key-delivery log text",
-      "packet captures",
       "credentials and key material"
     ],
-    "run_identifiers": "stable RUN-#### pseudonyms"
+    "run_identifiers": "stable RUN-#### pseudonyms",
+    "scope": "structured CSV, JSON, and JSONL records"
   },
   "files": [
     {
@@ -202,6 +203,13 @@
       "path": "data/functional/udp_profile_trials.csv",
       "rows": 30,
       "sha256": "b83933555d95f4e5c42569a3bc252ef3ce95165876eb054baa28f0c531bb7163"
+    },
+    {
+      "bytes": 6608,
+      "columns": [],
+      "path": "data/packet_capture/carrier_packet_headers.pcap",
+      "rows": 78,
+      "sha256": "21c0f9fa618f9a34a6b4405f98f57ee88aace3d9203d5011d35d1cc906c454b1"
     },
     {
       "bytes": 707,

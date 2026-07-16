@@ -9,9 +9,10 @@ trial-level experimental records, field definitions, paper-to-file mapping, and
 provenance needed to inspect the reported evidence with standard CSV/JSON
 tools. Two structure-preserving primary-evidence datasets release deterministic
 50% samples of the formal Sidecar run and attack-panel campaign without
-distributing complete operational logs. The repository does not include project
-source code, analysis or plotting scripts, generated figures, or precomputed
-result summaries.
+distributing complete operational logs. A sanitized carrier packet-header PCAP
+provides packet-level timing, direction, segmentation, and size evidence from
+an accepted run. The repository does not include project source code, analysis
+or plotting scripts, generated figures, or precomputed result summaries.
 
 ## Paper-to-file map
 
@@ -32,6 +33,7 @@ number.
 | Q2: valid-signature KeyId consistency gate | `data/security/valid_signature_binding_trials.csv` |
 | Q1/Q5: 45/90 accepted operations across five cross-process stages | `data/primary_evidence/sidecar_accepted_trace.jsonl` |
 | Q2: 200/400 receiver events, sampled at 50% within every attack-panel case | `data/primary_evidence/attack_panel_receiver_events.jsonl` |
+| Q1: selected TCP carrier packet-header trace | `data/packet_capture/carrier_packet_headers.pcap` |
 | Q3: nine component checkpoints | the de-identified Alice/Bob functional JSONL files and QKD audit above |
 | Q3: concurrency operating range | `data/performance/concurrency_trials.csv`, `concurrency_summary.csv` |
 | Q4: six clean/injection pairs | `data/performance/attack_mix_pairs.csv`, `attack_mix_phase_rows.csv` |
@@ -54,6 +56,7 @@ data/
   rotation/        one-hour and matched-rotation records
   traceability/    cross-source linkage and retained-event records
   primary_evidence/ 50% samples of accepted source-event records
+  packet_capture/  sanitized carrier packet-header trace
 provenance/
   data_manifest.json   row counts, fields, sizes, and hashes for every data file
 ```
@@ -64,14 +67,20 @@ exclusion rules.
 
 ## De-identification and exclusions
 
-- Operational QKD identifiers are replaced consistently by `KID-###` labels.
-- Action and run identifiers are replaced by `ACT-######` and `RUN-####`.
+- In the structured CSV, JSON, and JSONL records, operational QKD identifiers
+  are replaced consistently by `KID-###` labels.
+- Structured-record action and run identifiers are replaced by `ACT-######` and
+  `RUN-####`.
 - Absolute timestamps, network addresses and ports, host/user names, private
-  paths, nonces, key epochs, and raw key-management text are removed.
+  paths, nonces, key epochs, and raw key-management text are removed from the
+  structured records.
 - The reverse pseudonym mappings are not retained in this repository.
-- Substantial de-identified primary-record samples are included; complete
-  packet captures and full operational logs are excluded because they contain
-  internal network identifiers, operational QKD KeyIds, and KME/SSH metadata.
+- The selected PCAP preserves packet direction, TCP flags, original on-wire
+  length, segmentation, and relative timing. Addresses and ports are mapped to
+  documentation-only values, timestamps are shifted, link-layer addresses and
+  TCP timestamp values are cleared, and application payload bytes are omitted.
+- Complete packet-capture collections, plaintext-interface captures, KME/SSH
+  captures, and full operational logs remain excluded.
 - No symmetric key, signing private key, credential, access token, or raw key
   material is included.
 
@@ -83,13 +92,13 @@ the released cross-file joins.
 Suggested manuscript wording:
 
 > The de-identified event-level and trial-level records supporting the figures
-> and tables, together with de-identified primary-evidence samples, a data
-> dictionary, and provenance documentation, are available in the GitHub
-> repository *Integrated QGP Evaluation Data* at
+> and tables, together with de-identified primary-evidence samples, a selected
+> sanitized carrier packet-header capture, a data dictionary, and provenance
+> documentation, are available in the GitHub repository *Integrated QGP
+> Evaluation Data* at
 > https://github.com/MaoooMao/integrated-qgp-evaluation-artifact. Full
-> unredacted packet captures and operational logs containing internal network
-> identifiers, operational QKD KeyIds, and key-management entity (KME)/SSH
-> metadata are not publicly released.
+> packet-capture collections, plaintext-interface captures, KME/SSH captures,
+> and unredacted operational logs are not publicly released.
 
 No archival DOI is assigned to this submission snapshot. If an archival DOI is
 created later, it should identify an immutable release corresponding to the

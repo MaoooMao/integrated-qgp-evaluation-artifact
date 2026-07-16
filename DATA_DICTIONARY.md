@@ -69,6 +69,22 @@ For the `raw_no_qgp` case, `qgp_result` is `NONE` because parsing did not reach
 a QGP verification decision; the receiver record still terminates with a FAIL
 delivery outcome.
 
+## Packet capture
+
+### `carrier_packet_headers.pcap`
+
+This classic PCAP contains 78 Linux cooked-capture packet records derived from
+four outbound TCP carrier connections in an accepted run. It preserves record
+order, packet direction, TCP flags, original on-wire length, segmentation, and
+relative timing.
+
+The public transformation maps addresses and ports to documentation-only
+values, shifts timestamps to a synthetic epoch, clears link-layer addresses and
+TCP timestamp values, and omits every application payload byte. Original wire
+lengths remain in the PCAP record headers, so packet-size and segmentation
+patterns can still be inspected even though operational KeyIds and encrypted
+application bytes are absent.
+
 ## Functional data
 
 ### `core_functional_metrics.csv` and `sidecar_functional_metrics.csv`
