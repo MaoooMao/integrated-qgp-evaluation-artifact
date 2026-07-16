@@ -1,0 +1,11 @@
+{
+  "qkd_expected": true,
+  "transport_key_id_candidate_count": 5,
+  "transport_key_id_candidates": [
+    "KID-002",
+    "KID-005",
+    "KID-003",
+    "KID-004",
+    "KID-001"
+  ]
+}

@@ -1,0 +1,13 @@
+pair_index,phase,run_id,key_source,clients,duration_s,honest_result,honest_attempted,honest_verified_ok,honest_verified_fail,honest_verified_request_per_second,honest_e2e_latency_p95_ms,attack_rate,attack_duration_s,attack_sent,attack_responses,attack_no_response,attack_errors,attack_unique_transport_key_ids
+1,baseline,RUN-0256,qkd,2,300.0,PASS,2737,2737,0,9.087,1258.414,,,,,,,
+1,attack_mix,RUN-0257,qkd,2,300.0,PASS,2786,2786,0,9.246,1198.559,3.894,305.154977,1180,0,PASS,0,6
+2,baseline,RUN-0258,qkd,2,300.0,PASS,2729,2729,0,9.072,976.395,,,,,,,
+2,attack_mix,RUN-0259,qkd,2,300.0,PASS,2747,2747,0,9.127,1168.735,3.888,305.246745,1180,0,PASS,0,5
+3,baseline,RUN-0260,qkd,2,300.0,PASS,2649,2649,0,8.806,910.368,,,,,,,
+3,attack_mix,RUN-0261,qkd,2,300.0,PASS,2782,2782,0,9.261,1186.504,3.774,306.455046,1150,0,PASS,0,6
+4,baseline,RUN-0262,qkd,2,300.0,PASS,2749,2749,0,9.147,1159.783,,,,,,,
+4,attack_mix,RUN-0263,qkd,2,300.0,PASS,2712,2712,0,8.988,1145.761,3.920,307.097119,1197,0,PASS,0,6
+5,baseline,RUN-0264,qkd,2,300.0,PASS,2668,2668,0,8.909,1076.521,,,,,,,
+5,attack_mix,RUN-0265,qkd,2,300.0,PASS,2708,2708,0,9.020,1208.320,3.818,305.127870,1166,0,PASS,0,6
+6,baseline,RUN-0266,qkd,2,300.0,PASS,2696,2696,0,8.984,1227.039,,,,,,,
+6,attack_mix,RUN-0267,qkd,2,300.0,PASS,2646,2646,0,8.804,1250.068,3.850,305.178627,1176,0,PASS,0,6

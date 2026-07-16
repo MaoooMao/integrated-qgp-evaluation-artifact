@@ -1,0 +1,476 @@
+{
+  "deidentification": {
+    "action_identifiers": "stable ACT-###### pseudonyms",
+    "key_identifiers": "stable KID-### pseudonyms; reverse map not retained",
+    "removed": [
+      "absolute timestamps",
+      "network addresses and ports",
+      "host and user names",
+      "private filesystem paths",
+      "nonces and raw message identifiers",
+      "key epochs",
+      "raw key-delivery log text",
+      "packet captures",
+      "credentials and key material"
+    ],
+    "run_identifiers": "stable RUN-#### pseudonyms"
+  },
+  "files": [
+    {
+      "bytes": 4255,
+      "columns": [
+        "run_id",
+        "placement",
+        "traffic",
+        "result",
+        "elapsed_ms",
+        "application_or_target_bytes",
+        "response_bytes"
+      ],
+      "path": "data/functional/core_functional_metrics.csv",
+      "rows": 90,
+      "sha256": "b6b6e742ad782de44563abe6ae421abb355faa4244518aa0201b127f5283ea83"
+    },
+    {
+      "bytes": 35913,
+      "columns": [
+        "request_core_encrypt_send_ms",
+        "request_payload_bytes",
+        "request_qgp_build_sign_ms",
+        "request_qgp_envelope_bytes",
+        "response_core_recv_decrypt_ms",
+        "response_qgp_verify_ms",
+        "service_action_id",
+        "traffic_type",
+        "transport_key_id",
+        "verdict"
+      ],
+      "path": "data/functional/functional_perf_alice.jsonl",
+      "rows": 99,
+      "sha256": "471775bcec6d2c6eb8ef80f77e4fd324475ba261060ff3fd7afce92751d65b60"
+    },
+    {
+      "bytes": 44070,
+      "columns": [
+        "app_roundtrip_ms",
+        "request_core_recv_decrypt_ms",
+        "request_payload_bytes",
+        "request_qgp_verify_ms",
+        "response_core_encrypt_send_ms",
+        "response_payload_bytes",
+        "response_qgp_build_sign_ms",
+        "response_qgp_envelope_bytes",
+        "sequence",
+        "service_action_id",
+        "traffic_type",
+        "transport_key_id",
+        "verdict"
+      ],
+      "path": "data/functional/functional_perf_bob.jsonl",
+      "rows": 99,
+      "sha256": "168a192bce0f151f921c5f61bb752049f6984b0d52ab07bd53c2644d467efcc3"
+    },
+    {
+      "bytes": 182,
+      "columns": [
+        "qkd_expected",
+        "transport_key_id_candidate_count",
+        "transport_key_id_candidates"
+      ],
+      "path": "data/functional/functional_qkd_audit.json",
+      "rows": 1,
+      "sha256": "1b21e704a873cb629d21f576a139b38bf3367ede914e2e9e377e44ec6de1a982"
+    },
+    {
+      "bytes": 2067,
+      "columns": [
+        "configured_file_bytes",
+        "run_id",
+        "placement",
+        "traffic",
+        "result",
+        "elapsed_ms",
+        "application_or_target_bytes",
+        "response_bytes"
+      ],
+      "path": "data/functional/payload_size_metrics.csv",
+      "rows": 40,
+      "sha256": "c3451a9554e5cf17eadc802346bd8c1c19d9327c9edf3a74d5a53ce4d64c9849"
+    },
+    {
+      "bytes": 3716,
+      "columns": [
+        "run_id",
+        "placement",
+        "traffic",
+        "result",
+        "elapsed_ms",
+        "application_or_target_bytes",
+        "response_bytes"
+      ],
+      "path": "data/functional/sidecar_functional_metrics.csv",
+      "rows": 90,
+      "sha256": "dce2f95cf49be1c985bedd19442d158fc269a643219d9b8259319a37684facb1"
+    },
+    {
+      "bytes": 6120,
+      "columns": [
+        "action_index",
+        "action_id",
+        "traffic_type",
+        "scheduled_offset_seconds",
+        "transport_key_id",
+        "sender_pass",
+        "alice_qgp_pass",
+        "bob_qgp_pass",
+        "alice_carrier_pass",
+        "bob_carrier_pass",
+        "validation_errors",
+        "result"
+      ],
+      "path": "data/functional/sidecar_key_coverage.csv",
+      "rows": 90,
+      "sha256": "f8f4b0a28d870759b299a9c05b57e1b6494596f59c6b669a532075f75440e142"
+    },
+    {
+      "bytes": 1804,
+      "columns": [
+        "trial",
+        "action_id",
+        "transport_key_id",
+        "payload_bytes",
+        "stream_chunk_size_limit",
+        "signed_chunk_count",
+        "qgp_envelope_bytes",
+        "encrypted_frame_bytes",
+        "sender_verdict",
+        "receiver_verdict"
+      ],
+      "path": "data/functional/tcp_stream_trials.csv",
+      "rows": 30,
+      "sha256": "160ad226ce26ad89b75f8f07e9cb52ea0989e3e585ff938107a617c3b6c174ed"
+    },
+    {
+      "bytes": 4181,
+      "columns": [
+        "case",
+        "trial",
+        "action_id",
+        "expected_verified_delivery",
+        "payload_bytes",
+        "qgp_envelope_bytes",
+        "encrypted_frame_bytes",
+        "total_chunks",
+        "sent_chunks",
+        "wire_datagrams_sent",
+        "dropped_chunk_count",
+        "duplicated_chunk_count",
+        "reorder_swap_count",
+        "loss_rate",
+        "transport_key_id",
+        "send_error_present",
+        "verified_delivery_count",
+        "application_plaintext_count",
+        "false_verified_delivery",
+        "false_plaintext_delivery",
+        "missing_delivery",
+        "duplicate_delivery",
+        "trial_result"
+      ],
+      "path": "data/functional/udp_boundary_trials.csv",
+      "rows": 30,
+      "sha256": "2be1889669ab73709bf563ad8896b4368dc4aed0e163ac69d29d5979d18afc14"
+    },
+    {
+      "bytes": 5024,
+      "columns": [
+        "trial",
+        "action_id",
+        "transport_key_id",
+        "payload_bytes",
+        "qgp_envelope_bytes",
+        "encrypted_frame_bytes",
+        "wire_datagrams",
+        "qgp_build_sign_ms",
+        "core_encrypt_ms",
+        "udp_send_ms",
+        "core_decrypt_ms",
+        "qgp_verify_ms",
+        "application_udp_send_ms",
+        "result"
+      ],
+      "path": "data/functional/udp_profile_trials.csv",
+      "rows": 30,
+      "sha256": "b83933555d95f4e5c42569a3bc252ef3ce95165876eb054baa28f0c531bb7163"
+    },
+    {
+      "bytes": 707,
+      "columns": [
+        "pair_index",
+        "baseline_verified_rps",
+        "attack_verified_rps",
+        "throughput_change_pct",
+        "baseline_e2e_p95_ms",
+        "attack_e2e_p95_ms",
+        "p95_change_pct",
+        "attack_rate",
+        "attack_offered_fps",
+        "achieved_attack_fraction",
+        "attack_sent",
+        "attack_responses",
+        "attack_errors",
+        "result"
+      ],
+      "path": "data/performance/attack_mix_pairs.csv",
+      "rows": 6,
+      "sha256": "5d976858ce1fe3ce889b5344625017a060974efba085eeac2aa7ab0bf0e140c4"
+    },
+    {
+      "bytes": 1328,
+      "columns": [
+        "pair_index",
+        "phase",
+        "run_id",
+        "key_source",
+        "clients",
+        "duration_s",
+        "honest_result",
+        "honest_attempted",
+        "honest_verified_ok",
+        "honest_verified_fail",
+        "honest_verified_request_per_second",
+        "honest_e2e_latency_p95_ms",
+        "attack_rate",
+        "attack_duration_s",
+        "attack_sent",
+        "attack_responses",
+        "attack_no_response",
+        "attack_errors",
+        "attack_unique_transport_key_ids"
+      ],
+      "path": "data/performance/attack_mix_phase_rows.csv",
+      "rows": 12,
+      "sha256": "191e93cf155ce7598222ff6c197fe0382b36782ce247347be50b0a75ef108a17"
+    },
+    {
+      "bytes": 467,
+      "columns": [
+        "clients",
+        "repeats",
+        "pass",
+        "verified_ok",
+        "verified_fail",
+        "verified_rps_mean",
+        "verified_rps_sd",
+        "e2e_p95_ms_mean"
+      ],
+      "path": "data/performance/concurrency_summary.csv",
+      "rows": 7,
+      "sha256": "428b4593f04f180c2e8cb1fe43bd27bc0ac4d49999d37d40a4b587739b485b9b"
+    },
+    {
+      "bytes": 4691,
+      "columns": [
+        "run_id",
+        "expected_key_source",
+        "measurement_semantics",
+        "clients",
+        "repeat_index",
+        "duration_s",
+        "message_size",
+        "result",
+        "attempted",
+        "verified_ok",
+        "verified_fail",
+        "verified_request_per_second",
+        "verified_payload_MB_per_second",
+        "e2e_latency_mean_ms",
+        "e2e_latency_median_ms",
+        "e2e_latency_p95_ms",
+        "e2e_latency_p99_ms"
+      ],
+      "path": "data/performance/concurrency_trials.csv",
+      "rows": 35,
+      "sha256": "1a65a3f14ef2e5cd921ef3b6a79eb43df7ef3ac60e91acccadc5642c87bc41a8"
+    },
+    {
+      "bytes": 16881,
+      "columns": [
+        "run_id",
+        "sample",
+        "elapsed_s",
+        "traffic",
+        "result",
+        "app_elapsed_ms",
+        "plain_or_target_bytes",
+        "response_bytes",
+        "alice_transport_key_id",
+        "alice_response_qgp_result",
+        "bob_transport_key_id",
+        "bob_qgp_result"
+      ],
+      "path": "data/rotation/one_hour_timeline.csv",
+      "rows": 240,
+      "sha256": "618d2140a0dada192526c5284df4f2db38ea8bfab51f5265bd78adae4bd02430"
+    },
+    {
+      "bytes": 35946,
+      "columns": [
+        "source",
+        "rotation_seconds",
+        "action_index",
+        "traffic",
+        "result",
+        "evidence_match",
+        "transport_key_id",
+        "request_payload_bytes",
+        "response_payload_bytes",
+        "application_payload_bytes",
+        "request_encrypted_frame_bytes",
+        "response_encrypted_frame_bytes",
+        "encrypted_frame_bytes",
+        "key_fetch_ms",
+        "app_elapsed_ms"
+      ],
+      "path": "data/rotation/rotation_actions.csv",
+      "rows": 360,
+      "sha256": "4aba91aa4d97d53c185fd956b5ceb3903b23a82c3d3a8dd9029ec26ed7d31894"
+    },
+    {
+      "bytes": 712,
+      "columns": [
+        "rotation_seconds",
+        "actions",
+        "pass",
+        "unique_key_ids",
+        "unique_epochs",
+        "actions_per_key_id",
+        "application_payload_bytes",
+        "application_payload_MB_per_key_id",
+        "encrypted_frame_bytes",
+        "encrypted_frame_MB_per_key_id",
+        "key_fetch_median_ms",
+        "key_fetch_p95_ms",
+        "traffic_counts"
+      ],
+      "path": "data/rotation/rotation_summary.csv",
+      "rows": 3,
+      "sha256": "8ceed546a66f70eba303b3326997a72f09a4e5e79b8d22c57e3dadb1c56d4336"
+    },
+    {
+      "bytes": 42839,
+      "columns": [
+        "case",
+        "trial",
+        "action_id",
+        "expected_accept",
+        "accepted_by_response",
+        "response_bytes",
+        "frame_bytes",
+        "send_error_present",
+        "transport_key_id",
+        "bob_qgp_result",
+        "bob_qgp_reason",
+        "appserver_b_plaintexts_for_attack_send",
+        "app_plaintext_policy_ok",
+        "trial_result"
+      ],
+      "path": "data/security/fail_closed_trials.csv",
+      "rows": 400,
+      "sha256": "35127702186c4b00c6f6764df8d32e58b36e013f92afb85d8bb654f29d3d11e3"
+    },
+    {
+      "bytes": 13322,
+      "columns": [
+        "campaign",
+        "case",
+        "index",
+        "expected",
+        "accepted_by_response",
+        "response_bytes",
+        "send_error_present",
+        "transport_key_id",
+        "frame_bytes",
+        "case_result"
+      ],
+      "path": "data/security/post_signing_key_tamper_trials.csv",
+      "rows": 181,
+      "sha256": "73693814a2e8f9fdb77a4df89f181a0009639742daf4a5d61b23b135772afb48"
+    },
+    {
+      "bytes": 1620,
+      "columns": [
+        "case",
+        "index",
+        "expected",
+        "case_result",
+        "accepted_by_response",
+        "response_bytes",
+        "send_error_present",
+        "transport_key_id",
+        "key_source",
+        "signed_top_level_key_id",
+        "signed_transport_key_id",
+        "frame_transport_key_id",
+        "frame_bytes"
+      ],
+      "path": "data/security/valid_signature_binding_trials.csv",
+      "rows": 15,
+      "sha256": "accc955fdad3a13eb5e803df105a5e6810d4618ba62ca553d05f49a68b2de7e7"
+    },
+    {
+      "bytes": 565,
+      "columns": [
+        "run_id",
+        "modified_event_position",
+        "detected",
+        "verifier_result",
+        "reason"
+      ],
+      "path": "data/traceability/audit_chain_tamper_results.csv",
+      "rows": 10,
+      "sha256": "0ee6230f5c468430543c356d09ce19f5c74312d5cdd8f4b7e67fd19ca3d5d1ad"
+    },
+    {
+      "bytes": 426,
+      "columns": [
+        "key_id",
+        "sender_qgp_event_count",
+        "receiver_qgp_event_count",
+        "destination_key_retrieval_hits",
+        "sender_backbone_keyid_match",
+        "receiver_backbone_keyid_match",
+        "result"
+      ],
+      "path": "data/traceability/core_multi_key_linkage.csv",
+      "rows": 11,
+      "sha256": "728d9f98d621559b2f01942699aecddb9efb3258efbce3fe2d8b8be6905d6a48"
+    },
+    {
+      "bytes": 331,
+      "columns": [
+        "key_id",
+        "qgp_log_rows",
+        "sender_log_match",
+        "receiver_log_match",
+        "workload_summary_match",
+        "sender_backbone_carrier_match",
+        "sender_backbone_keyid_match",
+        "receiver_backbone_carrier_match",
+        "receiver_backbone_keyid_match",
+        "source_key_delivery_observed",
+        "destination_key_retrieval_observed",
+        "result"
+      ],
+      "path": "data/traceability/core_single_key_linkage.csv",
+      "rows": 1,
+      "sha256": "50b007c1f41464dc1aef585cc71a4385cb3ddb67bdb2511c7e168696e02a63f2"
+    }
+  ],
+  "pseudonym_cardinality": {
+    "action_ids": 679,
+    "key_ids": 145,
+    "run_ids": 508
+  },
+  "schema": "quantum-keyed-encryptor-public-artifact-v1"
+}

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the repository and the associated manuscript."
+title: "Integrated QGP Evaluation Artifact"
+type: dataset
+version: "submission-v1"
+date-released: 2026-07-15
+repository-code: "https://github.com/MaoooMao/integrated-qgp-evaluation-artifact"
+authors:
+  - family-names: Mao
+    given-names: Jianzhou
+  - family-names: Xu
+    given-names: Guobin
+  - family-names: Sakk
+    given-names: Eric
+  - family-names: Wang
+    given-names: "Shuangbao (Paul)"

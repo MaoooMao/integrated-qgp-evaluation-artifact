@@ -1,0 +1,4 @@
+rotation_seconds,actions,pass,unique_key_ids,unique_epochs,actions_per_key_id,application_payload_bytes,application_payload_MB_per_key_id,encrypted_frame_bytes,encrypted_frame_MB_per_key_id,key_fetch_median_ms,key_fetch_p95_ms,traffic_counts
+60,240,240,59,59,4.067796610169491,26114168,0.4426130169491525,29928168,0.5072570847457627,0.01745251938700676,35.17336002551019,"{'message': 80, 'file': 80, 'openweb': 80}"
+30,60,60,17,17,3.5294117647058822,6527713,0.3839831176470588,7501981,0.441293,0.018712,72.046049,"{'message': 20, 'file': 20, 'openweb': 20}"
+10,60,60,34,34,1.7647058823529411,6527713,0.1919915588235294,7502101,0.2206500294117647,18.6467335,78.225965,"{'message': 20, 'file': 20, 'openweb': 20}"

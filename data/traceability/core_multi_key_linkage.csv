@@ -1,0 +1,12 @@
+key_id,sender_qgp_event_count,receiver_qgp_event_count,destination_key_retrieval_hits,sender_backbone_keyid_match,receiver_backbone_keyid_match,result
+KID-135,60,60,1,1,1,PASS
+KID-136,60,60,1,1,1,PASS
+KID-137,60,60,1,1,1,PASS
+KID-138,19,19,1,1,1,PASS
+KID-139,60,60,1,1,1,PASS
+KID-140,60,60,1,1,1,PASS
+KID-141,45,45,1,1,1,PASS
+KID-142,60,60,1,1,1,PASS
+KID-143,60,60,1,1,1,PASS
+KID-144,60,60,1,1,1,PASS
+KID-145,60,60,1,1,1,PASS

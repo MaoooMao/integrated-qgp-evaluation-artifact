@@ -1,0 +1,11 @@
+run_id,modified_event_position,detected,verifier_result,reason
+RUN-0508,10,YES,FAIL,record_sha256 mismatch at 10
+RUN-0508,20,YES,FAIL,record_sha256 mismatch at 20
+RUN-0508,30,YES,FAIL,record_sha256 mismatch at 30
+RUN-0508,40,YES,FAIL,record_sha256 mismatch at 40
+RUN-0508,50,YES,FAIL,record_sha256 mismatch at 50
+RUN-0508,60,YES,FAIL,record_sha256 mismatch at 60
+RUN-0508,70,YES,FAIL,record_sha256 mismatch at 70
+RUN-0508,80,YES,FAIL,record_sha256 mismatch at 80
+RUN-0508,90,YES,FAIL,record_sha256 mismatch at 90
+RUN-0508,100,YES,FAIL,record_sha256 mismatch at 100

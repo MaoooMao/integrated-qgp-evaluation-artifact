@@ -1,0 +1,16 @@
+case,index,expected,case_result,accepted_by_response,response_bytes,send_error_present,transport_key_id,key_source,signed_top_level_key_id,signed_transport_key_id,frame_transport_key_id,frame_bytes
+clean_binding,1,PASS,PASS,True,7960,False,KID-020,qkd,KID-020,KID-020,KID-020,7700
+clean_binding,2,PASS,PASS,True,7960,False,KID-020,qkd,KID-020,KID-020,KID-020,7700
+clean_binding,3,PASS,PASS,True,7240,False,KID-020,qkd,KID-020,KID-020,KID-020,7700
+signed_top_level_frame_mismatch,4,REJECT,PASS,False,0,False,KID-020,qkd,KID-021,KID-020,KID-020,7772
+signed_top_level_frame_mismatch,5,REJECT,PASS,False,0,False,KID-020,qkd,KID-021,KID-020,KID-020,7772
+signed_top_level_frame_mismatch,6,REJECT,PASS,False,0,False,KID-020,qkd,KID-021,KID-020,KID-020,7772
+signed_metadata_frame_mismatch,7,REJECT,PASS,False,0,False,KID-020,qkd,KID-020,KID-022,KID-020,7768
+signed_metadata_frame_mismatch,8,REJECT,PASS,False,0,False,KID-020,qkd,KID-020,KID-022,KID-020,7768
+signed_metadata_frame_mismatch,9,REJECT,PASS,False,0,False,KID-020,qkd,KID-020,KID-022,KID-020,7768
+signed_both_qgp_ids_frame_mismatch,10,REJECT,PASS,False,0,False,KID-020,qkd,KID-023,KID-023,KID-020,7786
+signed_both_qgp_ids_frame_mismatch,11,REJECT,PASS,False,0,False,KID-020,qkd,KID-023,KID-023,KID-020,7786
+signed_both_qgp_ids_frame_mismatch,12,REJECT,PASS,False,0,False,KID-020,qkd,KID-023,KID-023,KID-020,7786
+clean_recovery,13,PASS,PASS,True,7240,False,KID-020,qkd,KID-020,KID-020,KID-020,7706
+clean_recovery,14,PASS,PASS,True,7962,False,KID-020,qkd,KID-020,KID-020,KID-020,7706
+clean_recovery,15,PASS,PASS,True,7962,False,KID-020,qkd,KID-020,KID-020,KID-020,7706
