@@ -294,6 +294,58 @@
       "sha256": "1a65a3f14ef2e5cd921ef3b6a79eb43df7ef3ac60e91acccadc5642c87bc41a8"
     },
     {
+      "bytes": 86392,
+      "columns": [
+        "accepted_by_response",
+        "action_id",
+        "application_plaintext_deliveries",
+        "case",
+        "history_action_id_present",
+        "qgp_reason",
+        "qgp_result",
+        "receiver_history_result",
+        "record_order",
+        "record_type",
+        "role",
+        "sampling_rule",
+        "trial",
+        "trial_result"
+      ],
+      "path": "data/primary_evidence/attack_panel_receiver_events.jsonl",
+      "rows": 200,
+      "sha256": "27f77192a0abf2e55efa4d2117be6b751ad591ef5bed44d172f9c89689b27d0c"
+    },
+    {
+      "bytes": 89012,
+      "columns": [
+        "action_id",
+        "action_index",
+        "elapsed_ms",
+        "exit_code",
+        "key_rotation_seconds",
+        "key_source",
+        "qgp_key_id",
+        "qgp_metadata_transport_key_id",
+        "qgp_reason",
+        "qgp_result",
+        "record_order",
+        "record_type",
+        "request_envelope_bytes",
+        "request_wire_bytes",
+        "response_envelope_bytes",
+        "response_wire_bytes",
+        "role",
+        "sampling_rule",
+        "scheduled_offset_seconds",
+        "traffic_type",
+        "transport_key_id",
+        "verdict"
+      ],
+      "path": "data/primary_evidence/sidecar_accepted_trace.jsonl",
+      "rows": 225,
+      "sha256": "3e90b12f5b16c63c6adacddb7149308a7996dbb2d38e8d7fd9b47dded820703b"
+    },
+    {
       "bytes": 16881,
       "columns": [
         "run_id",
@@ -472,5 +524,5 @@
     "key_ids": 145,
     "run_ids": 508
   },
-  "schema": "integrated-qgp-public-data-v1"
+  "schema": "quantum-keyed-encryptor-public-artifact-v1"
 }

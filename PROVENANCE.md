@@ -5,8 +5,10 @@
 This data release is built from the accepted experiment records used by the
 current manuscript analysis. Inputs are named explicitly in the private release
 process; it does not recursively import files, failed retries, or diagnostic
-runs. The public repository contains the selected de-identified records rather
-than the private collection workflow.
+runs. The public repository contains selected de-identified records rather than
+the private collection workflow. It also includes two deterministic 50%
+samples that retain the field structure and stage ordering of accepted source
+records.
 
 The released experiment families are:
 
@@ -17,7 +19,9 @@ The released experiment families are:
    valid-signature binding-gate campaigns;
 5. concurrency and paired clean/injection experiments;
 6. one-hour and matched-interval key-rotation accounting;
-7. single-key, multi-key, Sidecar, and retained-event traceability checks.
+7. single-key, multi-key, Sidecar, and retained-event traceability checks;
+8. accepted cross-process and receiver-verification record paths, sampled at
+   50% within their formal campaigns.
 
 `provenance/data_manifest.json` records the row count, field list, byte count,
 and SHA-256 digest of every released data file. `CHECKSUMS.sha256` covers the
@@ -31,6 +35,14 @@ needed for a released join, but the reverse mapping is not written to the
 repository. Absolute timestamps are either removed or represented by retained
 relative elapsed time. Operationally unnecessary fields are removed rather than
 masked in place.
+
+The primary-evidence samples retain source-level event ordering, verdicts,
+reasons, byte counts, and equality relationships. The Sidecar sample selects
+odd action indices from the 90-operation formal run, yielding 45 operations
+with 15 examples of each traffic type and five records per operation. The
+attack-panel sample selects odd trial indices within every case, yielding 200
+of 400 receiver events while preserving every tested condition. They use the
+same public action and KeyId pseudonyms as the complete released trial files.
 
 The transformation removes:
 
@@ -48,10 +60,12 @@ identifiers, private-key markers, and common credential assignments.
 
 ## Deliberately excluded evidence
 
-Raw packet captures, console transcripts, service stdout/stderr, unredacted
-key-management records, full packet/payload contents, private topology, and the
-private evidence tree are not released. These materials contain operational
-identifiers and are not necessary for inspecting the paper's released records.
+Complete raw packet captures, console transcripts, service stdout/stderr,
+unredacted key-management records, full packet/payload contents, private
+topology, and the private evidence tree are not released. These materials
+contain operational identifiers. Instead, the repository includes substantial
+de-identified samples from accepted QGP, carrier, workload, and receiver
+verification records.
 
 The release supports evidence inspection without enabling reconstruction of the
 laboratory network or replay of a live key-management session. The final

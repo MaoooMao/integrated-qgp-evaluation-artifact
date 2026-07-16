@@ -18,6 +18,57 @@ measurements and are never silently imputed.
 | Boolean fields | Serialized as `True`/`False`, `YES`/`NO`, or `1`/`0` according to the accepted source. |
 | `openweb` | The manuscript's web-fetch workload. |
 
+## Primary evidence excerpts
+
+These JSONL files are deterministic 50% samples derived from accepted source
+logs, not aggregate statistics. Absolute time, network addresses, operational
+IDs, nonces, paths, and key-management text are removed. The retained ordering
+and public pseudonyms allow the records to be compared with the complete
+released trial files.
+
+### `sidecar_accepted_trace.jsonl`
+
+The file contains 225 records for 45 of the formal run's 90 accepted
+operations. Odd action indices are retained across the full run, providing 15
+message, 15 file, and 15 web-fetch operations. Each operation contributes five
+ordered records: workload action, sender QGP event, sender carrier event,
+receiver carrier event, and receiver QGP event. The sample covers all five
+KeyIds observed in the full run.
+
+- `record_order`, `record_type`: stage order and source-record class.
+- `sampling_rule`: deterministic selection rule used for the public half-sample.
+- `action_index`, `action_id`, `traffic_type`: workload order and public join
+  identifier.
+- `transport_key_id`, `qgp_key_id`, `qgp_metadata_transport_key_id`: public
+  KeyId observations retained at the relevant stage.
+- `role`, `key_source`, `key_rotation_seconds`: observed component context.
+- `qgp_result`, `qgp_reason`, `verdict`: QGP and stage outcomes.
+- request/response envelope and wire `*_bytes`: carrier byte counts.
+- `scheduled_offset_seconds`, `elapsed_ms`, `exit_code`: workload-ledger fields.
+
+### `attack_panel_receiver_events.jsonl`
+
+The file contains 200 of the attack panel's 400 receiver events. Odd trial
+indices are retained within every case: 15 of 30 events for the honest baseline
+and each 30-trial negative case, plus 50 of 100 forged-signature events. This
+preserves every tested condition and includes both accepted baseline records and
+rejected adversarial records.
+
+- `record_order`, `record_type`, `sampling_rule`: retained order, source class,
+  and deterministic selection rule.
+- `case`, `trial`, `action_id`: tested condition, within-case trial number, and
+  public action identifier.
+- `qgp_result`, `qgp_reason`: receiver parser/verification outcome.
+- `receiver_history_result`, `history_action_id_present`: retained receiver-log
+  outcome and whether that source record exposed an action identifier.
+- `accepted_by_response`, `application_plaintext_deliveries`: corresponding
+  delivery observations from the accepted trial analysis.
+- `trial_result`: whether the observation matched the campaign expectation.
+
+For the `raw_no_qgp` case, `qgp_result` is `NONE` because parsing did not reach
+a QGP verification decision; the receiver record still terminates with a FAIL
+delivery outcome.
+
 ## Functional data
 
 ### `core_functional_metrics.csv` and `sidecar_functional_metrics.csv`
