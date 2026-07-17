@@ -2,7 +2,7 @@
 
 This repository provides the public data companion for the manuscript
 *Integrated QGP Protection for Heterogeneous Traffic over Quantum-Keyed
-Software Encryptor*. It contains the experimental records used to evaluate
+Encryptioin*. It contains the experimental records used to evaluate
 heterogeneous protected traffic, fail-closed verification, performance and
 concurrency, key rotation, and KeyId traceability.
 
