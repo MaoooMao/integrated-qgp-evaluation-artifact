@@ -9,7 +9,7 @@ concurrency, key rotation, and KeyId traceability.
 ## Paper
 
 **Integrated QGP Protection for Heterogeneous Traffic over Quantum-Keyed
-Software Encryptor**
+Encryptioin**
 
 The release is organized around the five evaluation questions in the paper.
 Citation metadata for the repository are provided in [CITATION.cff](CITATION.cff);
